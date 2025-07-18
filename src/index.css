@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: "august";
+    font-style: normal;
+    src: url(/fonts/August-Bold.ttf) format("woff2");
+  }
+  @font-face {
+    font-family: "dune";
+    font-style: normal;
+    src: url(/fonts/Dune_Rise.otf) format("woff2");
+  }
+  @font-face {
+    font-family: "montserrat";
+    src: url("/fonts/Montserrat.ttf") format("woff2");
+    font-display: swap;
+  }
+}
+
+@theme {
+  --font-title: "august", sans-serif;
+  --font-text: "dune", sans-serif;
+  --font-text2: "montserrat", serif;
+
+  --breakpoint-sm: 420px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1350px;
+  --breakpoint-2xl: 1650px;
+  --breakpoint-3xl: 1920px;
+
+  --color-black: #27272a;
+  --color-white: #d4d4d8;
+  --color-gray: #8b867f;
+  --color-gray2: #4e4b47;
+  --color-orange: #9c7443;
+}
