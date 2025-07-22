@@ -6,7 +6,7 @@ import {
   MeshTransmissionMaterial,
   Environment,
   Lightformer,
-  Preload
+  Preload,
 } from "@react-three/drei";
 import {
   CuboidCollider,
@@ -17,7 +17,7 @@ import {
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { easing } from "maath";
 
-const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
+const accents = [/* "#4060ff", "#20ffa0", "#ff4060", */ "#ffcc00", "#9c7443"];
 const shuffle = (accent = 0) => [
   { color: "#444", roughness: 0.1 },
   { color: "#444", roughness: 0.75 },
@@ -31,9 +31,55 @@ const shuffle = (accent = 0) => [
 ];
 
 export const Contact = () => (
-  <div className="container w-full h-screen">
-    <Scene />
-  </div>
+  <>
+    <div
+      id="contact"
+      className="w-full bg-white flex items-center justify-center absolute"
+    >
+      <div className="w-full h-full absolute">
+        <div className="container w-full h-screen">
+          <Scene />
+        </div>
+      </div>
+
+      <section className="w-full h-screen z-50 relative pt-20 text-balance flex flex-col justify-evenly pointer-events-none ">
+        <h6 className="font-title text-zinc-300 text-8xl text-center lg:text-9xl xl:text-[12rem] ">
+          Lets work together
+        </h6>
+        <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm">
+          <p className="max-w-[400px]">
+            YOUR FUTURE WEBSITE STARTS HERE <br />
+            STRATEGIC - SLEEK - EFFECTIVE
+          </p>
+          <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2">
+            I'M SOCIAL, SO IF YOU'D LIKE TO TALK ABOUT YOUR PROJECT, DROP ME A
+            LINE
+            <ul className="text-3xl flex justify-center gap-9 mt-4 pl-3">
+              <li>
+                <a href="">
+                  {" "}
+                  <i className="bxl bx-gmail hover:text-orange duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="bxl bx-facebook hover:text-orange duration-300"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="bxl bx-instagram hover:text-orange duration-300"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="absolute justify-center bottom-0 self-center  flex z-50 font-text text-sm text-zinc-700 ">
+          Agustin Morro
+        </div>
+      </section>
+    </div>
+  </>
 );
 export default Contact;
 
@@ -50,7 +96,7 @@ function Scene(props) {
       {...props}
     >
       <Suspense fallback={null}>
-        <color attach="background" args={["#141622"]} />
+        <color attach="background" args={["#0C0C0C"]} />
         <ambientLight intensity={0.4} />
         <spotLight
           position={[10, 10, 10]}
@@ -61,9 +107,9 @@ function Scene(props) {
         />
         <Physics /*debug*/ gravity={[0, 0, 0]}>
           <Pointer />
-          {
-            connectors.map((props, i) => <Connector key={i} {...props} />) /* prettier-ignore */
-          }
+          {connectors.map((props, i) => (
+            <Connector key={i} {...props} />
+          ))}
           <Connector position={[10, 10, 5]}>
             <Model>
               <MeshTransmissionMaterial

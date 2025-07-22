@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
 @layer base {
   @font-face {
     font-family: "august";
-    font-style: normal;
-    src: url(/fonts/August-Bold.ttf) format("woff2");
+    font-weight: 700;
+    src: url(/fonts/August-Bold.ttf) format("opentype");
+    font-display: swap;
   }
+
   @font-face {
     font-family: "dune";
-    font-style: normal;
-    src: url(/fonts/Dune_Rise.otf) format("woff2");
+    font-weight: 400;
+    src: url(/fonts/Dune_Rise.otf) format("opentype");
+    font-display: swap;
   }
-  @font-face {
-    font-family: "montserrat";
-    src: url("/fonts/Montserrat.ttf") format("woff2");
+   @font-face {
+    font-family: "figtree";
+    font-weight: 400;
+    src: url(/fonts/Figtree.ttf) format("opentype");
     font-display: swap;
   }
 }
@@ -21,7 +26,7 @@
 @theme {
   --font-title: "august", sans-serif;
   --font-text: "dune", sans-serif;
-  --font-text2: "montserrat", serif;
+  --font-text2: "figtree", sans-serif;
 
   --breakpoint-sm: 420px;
   --breakpoint-md: 768px;
@@ -35,4 +40,9 @@
   --color-gray: #8b867f;
   --color-gray2: #4e4b47;
   --color-orange: #9c7443;
+}
+
+.container{
+  width: 120vw;
+  max-width: 100%;
 }
