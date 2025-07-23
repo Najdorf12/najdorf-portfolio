@@ -4,13 +4,12 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Registrar el plugin ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
+
 
 const Cube = ({ isMobile }) => {
   const cubeRef = useRef();
 
-  // Definir posición y rotación según isMobile
+
   const cubePosition = isMobile ? [0,.3, 2.5] : [0,-.3,6.5];
 
   useEffect(() => {

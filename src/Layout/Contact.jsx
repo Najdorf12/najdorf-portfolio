@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { useRef, useReducer, useMemo, Suspense } from "react";
+import { useRef, useReducer, useMemo, Suspense, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
@@ -30,57 +30,88 @@ const shuffle = (accent = 0) => [
   { color: accents[accent], roughness: 0.1, accent: true },
 ];
 
-export const Contact = () => (
-  <>
-    <div
-      id="contact"
-      className="w-full bg-white flex items-center justify-center absolute"
-    >
-      <div className="w-full h-full absolute">
-        <div className="container w-full h-screen">
-          <Scene />
-        </div>
-      </div>
+export const Contact = () => {
+  const [isCopied, setIsCopied] = useState(false);
 
-      <section className="w-full h-screen z-50 relative pt-20 text-balance flex flex-col justify-evenly pointer-events-none ">
-        <h6 className="font-title text-zinc-300 text-8xl text-center lg:text-9xl xl:text-[12rem] ">
-          Lets work together
-        </h6>
-        <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm">
-          <p className="max-w-[400px]">
-            YOUR FUTURE WEBSITE STARTS HERE <br />
-            STRATEGIC - SLEEK - EFFECTIVE
-          </p>
-          <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2">
-            I'M SOCIAL, SO IF YOU'D LIKE TO TALK ABOUT YOUR PROJECT, DROP ME A
-            LINE
-            <ul className="text-3xl flex justify-center gap-9 mt-4 pl-3">
-              <li>
-                <a href="">
-                  {" "}
-                  <i className="bxl bx-gmail hover:text-orange duration-300"></i>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <i className="bxl bx-facebook hover:text-orange duration-300"></i>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <i className="bxl bx-instagram hover:text-orange duration-300"></i>
-                </a>
-              </li>
-            </ul>
+  const copyEmailToClipboard = () => {
+    navigator.clipboard
+      .writeText("agustin.morro@gmail.com")
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000); // Oculta el mensaje después de 2 segundos
+      })
+      .catch((err) => {
+        console.error("Error al copiar el correo:", err);
+        // Fallback: Abre el cliente de correo
+        window.location.href = "mailto:tuemail@example.com";
+      });
+  };
+
+  return (
+    <>
+      <div
+        id="contact"
+        className="w-full bg-white flex items-center justify-center absolute"
+      >
+        <div className="w-full h-full absolute">
+          <div className="container w-full h-screen">
+            <Scene />
           </div>
         </div>
-        <div className="absolute justify-center bottom-0 self-center  flex z-50 font-text text-sm text-zinc-700 ">
-          Agustin Morro
-        </div>
-      </section>
-    </div>
-  </>
-);
+
+        <section className="w-full h-screen z-50 relative pt-20 text-balance flex flex-col justify-evenly pointer-events-none ">
+          <h6 className="font-title text-zinc-300 text-8xl text-center lg:text-9xl xl:text-[12rem] ">
+            Let's work together
+          </h6>
+          <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm">
+            <p className="max-w-[400px]">
+              READY TO ELEVATE YOUR DIGITAL PRESENCE? <br />
+              STRATEGIC - SLEEK - EFFECTIVE
+            </p>
+            <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2">
+              I'M SOCIAL, SO IF YOU'D LIKE TO TALK ABOUT YOUR PROJECT, DROP ME A
+              LINE
+              <ul className="text-3xl flex justify-center gap-9 mt-4 pl-3">
+                <li className="relative">
+                  <button
+                    onClick={copyEmailToClipboard}
+                    className="hover:text-orange duration-300 relative cursor-pointer"
+                  >
+                    <i className="bxl bx-gmail"></i>
+                  </button>
+                  {isCopied && (
+                    <div className="text-[9px] text-zinc-400 absolute -bottom-3 ">
+                      Copied
+                    </div>
+                  )}
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/agustin.morro"
+                    target="_blank"
+                  >
+                    <i className="bxl bx-facebook hover:text-orange duration-300"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/agusmorro12"
+                    target="_blank"
+                  >
+                    <i className="bxl bx-instagram hover:text-orange duration-300"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="absolute justify-center bottom-0 self-center  flex z-50 font-text text-sm text-zinc-700 ">
+            Agustin Morro
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
 export default Contact;
 
 function Scene(props) {

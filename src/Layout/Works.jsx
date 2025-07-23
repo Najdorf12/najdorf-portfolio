@@ -1,6 +1,4 @@
 import CubeExperince from "../components/Models3D/Cube/CubeExperience";
-import { CircleExperience } from "../components/Models3D/Circle/CircleExperience";
-import { Canvas } from "@react-three/fiber";
 const myWorks = [
   "Faustino Oro",
   "JFR",
@@ -14,22 +12,20 @@ const Works = () => {
       id="works"
       className="w-full h-full bg-black overflow-hidden relative"
     >
-      <div className="absolute inset-0 z-50 w-full h-screen overflow-hidden lg:block ">
-       {/*  <Canvas>
-          <CircleExperience />
-        </Canvas> */}
-      </div>
       <section className="w-full h-full pt-12 lg:pt-20 lg:px-3">
-        <article className="flex flex-col justify-center items-center lg:gap-3">
-          <h6 className="font-title text-[10rem] text-orange lg:text-[18rem]">
+        <article className="flex flex-col justify-center items-center lg:gap-3 relative z-50">
+          <h6 className="font-title text-[10rem] text-orange lg:text-[18rem] lg:leading-[18rem]">
             Works
           </h6>
-          <p className="font-text text-[10px] max-w-[300px] text-center text-zinc-500 lg:text-sm lg:max-w-[400px]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veniam
-            dignissimos laborum lorem
+          <p className="font-text text-[10px] max-w-[300px] text-balance text-center text-zinc-500 lg:text-sm lg:mt-6 lg:max-w-[600px]">
+            A showcase of my projects, blending innovative technology with
+            user-focused design to create impactful digital solutions.
           </p>
         </article>
-        <ul className="w-full flex flex-col items-end mt-20 text-end lg:mt-24">
+        <ul
+          id="works1"
+          className="w-full flex flex-col items-end mt-20 text-end lg:mt-24 relative"
+        >
           {myWorks.map((work, i) => (
             <li
               key={i}
@@ -58,13 +54,15 @@ const Works = () => {
           <div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between px-3">
             <p className=" relative font-text text-gray2 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:max-w-[500px]  ">
               <span className="absolute top-0 w-full h-[1px] bg-gray lg:-top-3"></span>
-              I believe in a holistic and user-centric UX/UI design approach. My
-              proccess is meticulously crafted to deliver exceptional digital
-              experiences that resonate with your audience and drive success.
+              I specialize in creating seamless digital experiences that blend
+              aesthetic appeal with technical excellence. My approach combines
+              modern development practices with a deep understanding of user
+              behavior.
             </p>
             <p className=" relative font-text text-gray2 text-[10px] text-balance text-end pt-3 mt-2 max-w-[350px] md:text-start lg:max-w-[400px] lg:text-[12px] ">
               <span className="absolute top-0 w-full h-[1px] bg-gray lg:-top-3"></span>
-              GREAT MARKETING DOESN'T HAVE TO BE COMPLICATED
+              GREAT SOLUTIONS DON'T NEED TO BE COMPLEX -{" "}
+              <span className="text-orange">JUST THOUGHTFULLY CRAFTED</span>
             </p>
           </div>
         </article>
