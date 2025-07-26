@@ -1,9 +1,15 @@
-import { useRef, useLayoutEffect, memo, useMemo, useState, useEffect } from "react";
+import {
+  useRef,
+  useLayoutEffect,
+  memo,
+  useMemo,
+  useState,
+  useEffect,
+} from "react";
 import { useGLTF, Text, MeshTransmissionMaterial } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 
 const defaultMaterialProps = {
   thickness: 0.3,
@@ -22,10 +28,13 @@ const useResponsiveConfig = (viewportWidth) => {
     return {
       fontSize: {
         main: isMobile ? 2 : 6,
-        subtitle: isMobile ? 0.25 : 0.36,
+        subtitle: isMobile ? 0.25 : 0.3,
       },
       torusScale: isMobile ? viewportWidth / 300 : viewportWidth / 500,
-      textPosition: isMobile ? [0, 1.5, -2] : [0, .30, -2],
+      textPosition: isMobile ? [0, 1.5, -2] : [0, 0.3, -2],
+      subTitlePosition: isMobile
+        ? { subtitle1Position: [0, -3.7, 0], subtitle2Position: [0, -4.2, 0] }
+        : { subtitle1Position: [0, -4.3, -1], subtitle2Position: [0, -4.9, -1] },
       animations: {
         rotation: {
           enabled: isMobile ? true : true,
@@ -69,7 +78,11 @@ const Torus = memo(({ modelContainerRef }) => {
   // Ajustar escala del modelo
   useEffect(() => {
     if (meshRef.current) {
-      meshRef.current.scale.set(responsive.torusScale, responsive.torusScale, responsive.torusScale);
+      meshRef.current.scale.set(
+        responsive.torusScale,
+        responsive.torusScale,
+        responsive.torusScale
+      );
     }
   }, [responsive.torusScale]);
 
@@ -185,9 +198,13 @@ const Torus = memo(({ modelContainerRef }) => {
         scrub: true,
         onLeave: () => {
           if (!modelContainerRef.current.classList.contains("absolute")) {
-            const about2Rect = document.getElementById("about2").getBoundingClientRect();
+            const about2Rect = document
+              .getElementById("about2")
+              .getBoundingClientRect();
             modelContainerRef.current.classList.add("absolute");
-            modelContainerRef.current.style.top = `${about2Rect.top + window.scrollY}px`;
+            modelContainerRef.current.style.top = `${
+              about2Rect.top + window.scrollY
+            }px`;
             modelContainerRef.current.style.left = `${about2Rect.left}px`;
             modelContainerRef.current.style.width = `${about2Rect.width}px`;
             modelContainerRef.current.style.height = `${about2Rect.height}px`;
@@ -239,18 +256,18 @@ const Torus = memo(({ modelContainerRef }) => {
         <Text
           font="/fonts/Dune_Rise.otf"
           fontSize={responsive.fontSize.subtitle}
-          position={[0, -3.5, 0]}
+          position={responsive.subTitlePosition.subtitle1Position}
           color="#8b867f"
         >
-          FULL STACK
+          FULL STACK DEVELOPER
         </Text>
         <Text
           font="/fonts/Dune_Rise.otf"
           fontSize={responsive.fontSize.subtitle}
-          position={[0, -4, 0]}
+          position={responsive.subTitlePosition.subtitle2Position}
           color="rgb(255, 255, 255)"
         >
-          DEVELOPER
+          & UX/UI Designer
         </Text>
       </group>
       <group ref={meshRef} scale={responsive.torusScale}>
