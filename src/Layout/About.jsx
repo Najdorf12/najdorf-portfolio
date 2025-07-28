@@ -4,18 +4,18 @@ const About = () => {
     <>
       <section
         id="more"
-        className=" w-full relative overflow-hidden z-10 px-5 py-3 lg:pt-20 lg:px-12 xl:px-24 "
+        className=" w-full relative overflow-hidden z-10 px-5 py-3 lg:pt-20 lg:px-12 xl:px-20 xl:py-9 2xl:py-12 "
       >
         <article className="flex text-balance  flex-col gap-6 font-title text-zinc-400">
-          <p className="text-7xl md:text-8xl lg:text-9xl max-w-[600px]">
+          <p className="text-7xl md:text-8xl lg:text-9xl max-w-[600px] 2xl:text-[9rem] 2xl:max-w-[800px]">
             Turning ideas into{" "}
             <span className="text-zinc-500">interactive realities</span>
           </p>
-          <p className="text-7xl self-end max-w-[200px] mt-6 md:text-8xl lg:max-w-[350px] xl:mr-20 ">
+          <p className="text-7xl self-end max-w-[200px] mt-6 md:text-8xl lg:max-w-[350px] xl:mr-20 2xl:text-9xl xl:mt-12">
             Crafting immersive digital experiences
           </p>
         </article>
-        <figure className="max-w-[160px] mt-6 lg:max-w-[220px] xl:max-w-[270px] lg:-mt-60 xl:-mt-70">
+        <figure className="max-w-[160px] mt-6 lg:max-w-[220px] xl:max-w-[270px] lg:-mt-60 xl:-mt-86 2xl:max-w-[300px] 2xl:-mt-96">
           <img
             id="more-img"
             src={imgAbout}
@@ -23,7 +23,7 @@ const About = () => {
             className="w-full object-contain"
           />
         </figure>
-        <div className=" relative font-text text-zinc-400 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:mt-0 lg:pt-4 lg:max-w-[500px] ">
+        <div className=" relative font-text text-zinc-400 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:mt-0 lg:pt-4 lg:max-w-[500px] 2xl:text-[12px] 2xl:max-w-[600px] ">
           <span className="absolute top-0 w-full h-[1px] bg-zinc-100"></span>I
           design digital solutions that are intuitive, engaging, and impactful.
           My process blends clean code, user-centric design, and innovative
@@ -37,13 +37,13 @@ const About = () => {
       >
         <div className="h-[90%] px-5 text-balance w-[95%] rounded-2xl bg-zinc-800 lg:px-20 ">
           <article className="flex flex-col justify-center h-full font-text2">
-            <h2 className="relative z-50 text-4xl max-w-[600px] lg:text-6xl text-[#9c7443] font-text">
+            <h2 className="relative z-50 text-4xl max-w-[600px] lg:text-6xl text-[#9c7443] font-text 2xl:text-7xl 2xl:max-w-[800px]">
               [ WHAT ABOUT ME ]
             </h2>
-            <div className="relative z-50 text-stone-600 text-base font-text2 mt-5">
+            <div className="relative z-50 text-stone-600 text-base font-text2 mt-5 2xl:text-lg">
               CODE-DRIVEN | INNOVATIVE SOLUTIONS | USER-CENTRIC DESIGN
             </div>
-            <p className="relative z-50 text-base text-stone-500 font-text2 mt-16 max-w-[600px] ">
+            <p className="relative z-50 text-base text-stone-500 font-text2 mt-16 max-w-[600px] 2xl:text-lg">
               I’m Agustin Morro, a full-stack developer based in Mendoza -
               Argentina, with a passion for transforming bold ideas into
               seamless digital experiences. I build responsive, high-performance
@@ -61,14 +61,14 @@ const About = () => {
       >
         <div className="h-[90%] px-5 text-balance w-[95%] rounded-2xl bg-orange lg:px-20">
           <article className="flex flex-col justify-center h-full font-text2">
-            <h2 className="relative z-50 text-4xl lg:text-6xl text-zinc-100 font-text">
+            <h2 className="relative z-50 text-4xl lg:text-6xl text-zinc-100 font-text 2xl:text-7xl 2xl:max-w-[800px]">
               [ WHAT I BRING ]
             </h2>
-            <div className="relative z-50 text-zinc-300 text-base font-text2 mt-5">
+            <div className="relative z-50 text-zinc-300 text-base font-text2 mt-5 2xl:text-lg">
               INTUITIVE APPROACH | FUTURE-FOCUSED STRATEGY | UNCOMPROMISING
               DISCIPLINE
             </div>
-            <p className="relative z-50 text-base text-zinc-700 max-w-[600px] font-text2 mt-16">
+            <p className="relative z-50 text-base text-zinc-700 max-w-[600px] font-text2 mt-16 2xl:text-lg">
               I wield cutting-edge technologies like React and Three.js to build
               immersive web applications. My approach is rooted in solving
               real-world problems with innovative solutions, always aiming to

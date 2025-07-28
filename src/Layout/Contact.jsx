@@ -60,18 +60,18 @@ export const Contact = () => {
         </div>
 
         <section className="w-full h-screen z-50 relative pt-20 text-balance flex flex-col justify-evenly pointer-events-none ">
-          <h6 className="font-title text-zinc-300 text-8xl text-center lg:text-9xl xl:text-[12rem] ">
+          <h6 className="font-title text-zinc-300 text-8xl text-center lg:text-9xl xl:text-[12rem] 2xl:text-[14rem] ">
             Let's work together
           </h6>
-          <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm">
-            <p className="max-w-[400px]">
+          <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm 2xl:px-6">
+            <p className="max-w-[400px] 2xl:max-w-[500px]">
               READY TO ELEVATE YOUR DIGITAL PRESENCE? <br />
               STRATEGIC - SLEEK - EFFECTIVE
             </p>
-            <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2">
+            <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2 2xl:max-w-[500px]">
               I'M SOCIAL, SO IF YOU'D LIKE TO TALK ABOUT YOUR PROJECT, DROP ME A
               LINE
-              <ul className="text-3xl flex justify-center gap-9 mt-4 pl-3">
+              <ul className="text-3xl flex justify-center gap-9 mt-4">
                 <li className="relative">
                   <button
                     onClick={copyEmailToClipboard}

@@ -19,7 +19,7 @@ const Works = () => {
           </h6>
           <p className="font-text text-[10px] max-w-[300px] text-balance text-center text-zinc-500 lg:text-sm lg:mt-6 lg:max-w-[600px]">
             A showcase of my projects, blending innovative technology with
-            user-focused design 
+            user-focused design
           </p>
         </article>
         <ul
@@ -42,9 +42,9 @@ const Works = () => {
         className="w-full text-balance h-full pt-24 pb-3 relative"
       >
         <article className="h-screen flex flex-col justify-between relative py-6 lg:py-9">
-          <p className="font-text relative text-[2rem] pl-3 text-orange font-semibold md:pl-6 md:text-6xl max-w-[600px] lg:text-7xl lg:max-w-[800px] lg:font-normal">
+          <p className="font-text relative text-[2rem] pl-3 text-orange font-semibold md:pl-6 md:text-6xl max-w-[600px] lg:text-7xl lg:max-w-[800px] lg:font-normal 2xl:text-8xl 2xl:max-w-[1000px]">
             SIMPLICITY IS THE NEW{" "}
-            <span className="w-4 h-4 md:w-6 md:h-6 top-14 right-24 bg-zinc-700 rounded-full absolute md:right-40 md:top-[70px] lg:top-[86px] lg:right-70 xl:right-64"></span>
+            <span className="w-4 h-4 md:w-6 md:h-6 top-14 right-24 bg-zinc-700 rounded-full absolute md:right-40 md:top-[70px] lg:top-[86px] lg:right-70 xl:right-64 2xl:top-[120px] 2xl:w-7 2xl:h-7"></span>
             <span className="text-zinc-700">Sophistication</span>
           </p>
           <div className="absolute inset-0 z-50 w-full h-screen overflow-hidden lg:block ">
@@ -52,14 +52,14 @@ const Works = () => {
           </div>
 
           <div className="flex flex-col gap-6 md:flex-row-reverse md:justify-between px-3">
-            <p className=" relative font-text text-gray2 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:max-w-[500px]  ">
+            <p className=" relative font-text text-gray2 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:max-w-[500px] 2xl:text-[12px]  ">
               <span className="absolute top-0 w-full h-[1px] bg-gray lg:-top-3"></span>
               I specialize in creating seamless digital experiences that blend
               aesthetic appeal with technical excellence. My approach combines
               modern development practices with a deep understanding of user
               behavior.
             </p>
-            <p className=" relative font-text text-gray2 text-[10px] text-balance text-end pt-3 mt-2 max-w-[350px] md:text-start lg:max-w-[400px] lg:text-[12px] ">
+            <p className=" relative font-text text-gray2 text-[10px] text-balance text-end pt-3 mt-2 max-w-[350px] md:text-start lg:max-w-[400px] lg:text-[12px] 2xl:text-[14px] 2xl:max-w-[500px]">
               <span className="absolute top-0 w-full h-[1px] bg-gray lg:-top-3"></span>
               GREAT SOLUTIONS DON'T NEED TO BE COMPLEX -{" "}
               <span className="text-orange">JUST THOUGHTFULLY CRAFTED</span>
