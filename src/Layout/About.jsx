@@ -17,6 +17,7 @@ const About = () => {
         </article>
         <figure className="max-w-[160px] mt-6 lg:max-w-[220px] xl:max-w-[270px] lg:-mt-60 xl:-mt-70">
           <img
+            id="more-img"
             src={imgAbout}
             alt="img-about"
             className="w-full object-contain"
@@ -24,9 +25,9 @@ const About = () => {
         </figure>
         <div className=" relative font-text text-zinc-400 text-[10px] text-balance pt-3 mt-2 max-w-[350px] lg:mt-0 lg:pt-4 lg:max-w-[500px] ">
           <span className="absolute top-0 w-full h-[1px] bg-zinc-100"></span>I
-          create digital experiences that are intuitive, engaging, and
-          impactful. My process blends clean code, user-centric design, and
-          innovative technologies to deliver solutions that drive success.
+          design digital solutions that are intuitive, engaging, and impactful.
+          My process blends clean code, user-centric design, and innovative
+          technologies to deliver solutions that drive success
         </div>
       </section>
 
@@ -40,7 +41,7 @@ const About = () => {
               [ WHAT ABOUT ME ]
             </h2>
             <div className="relative z-50 text-stone-600 text-base font-text2 mt-5">
-              CODE-DRIVEN | CREATIVE PROBLEM-SOLVING | USER-CENTRIC DESIGN
+              CODE-DRIVEN | INNOVATIVE SOLUTIONS | USER-CENTRIC DESIGN
             </div>
             <p className="relative z-50 text-base text-stone-500 font-text2 mt-16 max-w-[600px] ">
               I’m Agustin Morro, a full-stack developer based in Mendoza -
@@ -68,10 +69,11 @@ const About = () => {
               DISCIPLINE
             </div>
             <p className="relative z-50 text-base text-zinc-700 max-w-[600px] font-text2 mt-16">
-              I leverage modern stacks (React, Node.js, Three.js) to build
-              immersive web applications. Artistry lies in merging clean code
-              with visually compelling design, delivering solutions that engage
-              users and achieve measurable impact.
+              I wield cutting-edge technologies like React and Three.js to build
+              immersive web applications. My approach is rooted in solving
+              real-world problems with innovative solutions, always aiming to
+              create digital products that are intuitive, impactful, and
+              future-ready.
             </p>
           </article>
         </div>
@@ -90,7 +92,7 @@ Subtitle: Full-Stack Developer & UX/UI Enthusiast
 Note: Adding "UX/UI Enthusiast" to the subtitle emphasizes your design passion while keeping it concise and aligned with your brand.
 
 
-
+I believe in digital minimalism—stripping away complexity to reveal solutions of startling clarity. My development process focuses on what truly matters: intuitive navigation, lightning-fast performance, and designs that communicate instantly.
 More Section
 
 Headline: Turning Ideas into Interactive Realities
