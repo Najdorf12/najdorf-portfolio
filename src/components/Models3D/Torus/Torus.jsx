@@ -122,7 +122,7 @@ const Torus = memo(({ modelContainerRef }) => {
       animations.push(
         gsap.to(torusRef.current.material, {
           _transmission: .6,
-          ior: 1,
+          ior: .5,
           duration: responsive.animations.scroll.duration,
           scrollTrigger: {
             trigger: "#more",
