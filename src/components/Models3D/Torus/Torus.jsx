@@ -15,7 +15,7 @@ const defaultMaterialProps = {
   thickness: 0.3,
   roughness: 0.1,
   transmission: 1,
-  ior: 1,
+  ior: 1.1,
   chromaticAberration: 0.02,
   backside: true,
   opacity: 1,

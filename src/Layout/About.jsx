@@ -61,7 +61,7 @@ const About = () => {
       >
         <div className="h-[90%] px-5 text-balance w-[95%] rounded-2xl bg-orange lg:px-20">
           <article className="flex flex-col justify-center h-full font-text2">
-            <h2 className="relative z-50 text-4xl lg:text-6xl text-zinc-100 font-text 2xl:text-7xl 2xl:max-w-[800px]">
+            <h2 className="relative z-50 text-4xl lg:text-6xl text-zinc-100 font-text 2xl:text-7xl xl:max-w-[600px] 2xl:max-w-[800px]">
               [ WHAT I BRING ]
             </h2>
             <div className="relative z-50 text-zinc-300 text-base font-text2 mt-5 2xl:text-lg">
