@@ -15,7 +15,7 @@ const defaultMaterialProps = {
   thickness: 0.3,
   roughness: 0.1,
   transmission: 1,
-  ior: 1.1,
+  ior: 1,
   chromaticAberration: 0.02,
   backside: true,
   opacity: 1,
@@ -31,10 +31,10 @@ const useResponsiveConfig = (viewportWidth) => {
         subtitle: isMobile ? 0.25 : 0.3,
       },
       torusScale: isMobile ? viewportWidth / 300 : viewportWidth / 500,
-      textPosition: isMobile ? [0, 1.5, -2] : [0, 0.3, -2],
+      textPosition: isMobile ? [0, 1.5, -2.5] : [0, 0.3, -2],
       subTitlePosition: isMobile
         ? { subtitle1Position: [0, -3.7, 0], subtitle2Position: [0, -4.2, 0] }
-        : { subtitle1Position: [0, -4.3, -1], subtitle2Position: [0, -4.9, -1] },
+        : { subtitle1Position: [0, -4.2, -1], subtitle2Position: [0, -4.6, -1] },
       animations: {
         rotation: {
           enabled: isMobile ? true : true,
@@ -59,7 +59,7 @@ const Torus = memo(({ modelContainerRef }) => {
   const { viewport } = useThree();
   const [viewportWidth, setViewportWidth] = useState(viewport.width);
   const responsive = useResponsiveConfig(viewportWidth);
-  const { nodes } = useGLTF(responsive.model.path); // Ahora responsive ya está definido
+  const { nodes } = useGLTF(responsive.model.path);
   const meshRef = useRef();
   const torusRef = useRef();
   const textGroupRef = useRef();
@@ -93,7 +93,6 @@ const Torus = memo(({ modelContainerRef }) => {
 
     torusRef.current.material._wireframeProgress = 0;
 
-    // Animación de rotación (solo en desktop si está habilitada)
     if (responsive.animations.rotation.enabled) {
       rotationAnimRef.current = gsap.to(torusRef.current.rotation, {
         x: "+=6.28",
@@ -104,7 +103,6 @@ const Torus = memo(({ modelContainerRef }) => {
       animations.push(rotationAnimRef.current);
     }
 
-    // Animación de texto
     animations.push(
       gsap.to(textGroupRef.current.position, {
         y: 100 * responsive.animations.scroll.intensity,
@@ -120,13 +118,11 @@ const Torus = memo(({ modelContainerRef }) => {
       })
     );
 
-    // Animación de material (solo en desktop si está habilitada)
     if (responsive.animations.wireframe.enabled) {
       animations.push(
         gsap.to(torusRef.current.material, {
-          _transmission: 0.5,
-          roughness: 0,
-          ior: 0.4,
+          _transmission: .6,
+          ior: 1,
           duration: responsive.animations.scroll.duration,
           scrollTrigger: {
             trigger: "#more",
@@ -154,7 +150,6 @@ const Torus = memo(({ modelContainerRef }) => {
       );
     }
 
-    // Manejo de transición fixed/absolute
     ScrollTrigger.create({
       trigger: "#about2",
       start: "top top",
