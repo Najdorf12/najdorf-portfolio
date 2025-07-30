@@ -31,11 +31,13 @@ const useResponsiveConfig = (viewportWidth) => {
         subtitle: isMobile ? 0.25 : 0.3,
       },
       torusScale: isMobile ? viewportWidth / 270 : viewportWidth / 500,
-      textPosition: isMobile ? [0, 1.6, -2.5] : [0, 0.3, -2],
+      textPosition: isMobile ? [0, 1.6, -2.5] : [0, 0.3, -2.8],
+      subtitleMaxWidth: isMobile ? 4.6 : 5.6,
+      subtitleLineHeight: isMobile ? 1.9 : 1.5,
       subTitlePosition: isMobile
         ? { subtitle1Position: [0, -4.5, -.5] }
         : {
-            subtitle1Position: [0, -4.2, -1],
+            subtitle1Position: [0, -5, -1],
           },
       animations: {
         rotation: {
@@ -255,9 +257,9 @@ const Torus = memo(({ modelContainerRef }) => {
           fontSize={responsive.fontSize.subtitle}
           position={responsive.subTitlePosition.subtitle1Position}
           color="#8b867f"
-          maxWidth={4.6}
+          maxWidth={responsive.subtitleMaxWidth}
           textAlign="center"
-          lineHeight={1.9}
+          lineHeight={responsive.subtitleLineHeight}
         >
           FULL STACK DEVELOPER & UX/UI DESIGNER
         </Text>
