@@ -30,11 +30,13 @@ const useResponsiveConfig = (viewportWidth) => {
         main: isMobile ? 2 : 6,
         subtitle: isMobile ? 0.25 : 0.3,
       },
-      torusScale: isMobile ? viewportWidth / 300 : viewportWidth / 500,
-      textPosition: isMobile ? [0, 1.5, -2.5] : [0, 0.3, -2],
+      torusScale: isMobile ? viewportWidth / 270 : viewportWidth / 500,
+      textPosition: isMobile ? [0, 1.6, -2.5] : [0, 0.3, -2],
       subTitlePosition: isMobile
-        ? { subtitle1Position: [0, -3.7, 0], subtitle2Position: [0, -4.2, 0] }
-        : { subtitle1Position: [0, -4.2, -1], subtitle2Position: [0, -4.6, -1] },
+        ? { subtitle1Position: [0, -4.5, -.5] }
+        : {
+            subtitle1Position: [0, -4.2, -1],
+          },
       animations: {
         rotation: {
           enabled: isMobile ? true : true,
@@ -121,8 +123,8 @@ const Torus = memo(({ modelContainerRef }) => {
     if (responsive.animations.wireframe.enabled) {
       animations.push(
         gsap.to(torusRef.current.material, {
-          _transmission: .6,
-          ior: .5,
+          _transmission: 0.6,
+          ior: 0.5,
           duration: responsive.animations.scroll.duration,
           scrollTrigger: {
             trigger: "#more",
@@ -253,16 +255,11 @@ const Torus = memo(({ modelContainerRef }) => {
           fontSize={responsive.fontSize.subtitle}
           position={responsive.subTitlePosition.subtitle1Position}
           color="#8b867f"
+          maxWidth={4.6}
+          textAlign="center"
+          lineHeight={1.9}
         >
-          FULL STACK DEVELOPER
-        </Text>
-        <Text
-          font="/fonts/Dune_Rise.otf"
-          fontSize={responsive.fontSize.subtitle}
-          position={responsive.subTitlePosition.subtitle2Position}
-          color="rgb(255, 255, 255)"
-        >
-          & UX/UI Designer
+          FULL STACK DEVELOPER & UX/UI DESIGNER
         </Text>
       </group>
       <group ref={meshRef} scale={responsive.torusScale}>
