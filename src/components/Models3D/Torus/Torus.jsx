@@ -214,8 +214,8 @@ const Torus = memo(({ modelContainerRef }) => {
 
     // Simplificar animaciones de posición en móviles
     tl.to(torusRef.current.position, {
-      y: -1.4 * responsive.animations.scroll.intensity,
-      z: -3.2 * responsive.animations.scroll.intensity,
+      y: -1.3 * responsive.animations.scroll.intensity,
+      z: -3 * responsive.animations.scroll.intensity,
       ease: "none",
       duration: responsive.animations.scroll.duration,
     })
