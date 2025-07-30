@@ -66,12 +66,12 @@ export const Contact = () => {
           <div className="w-full flex flex-col gap-12 justify-between text-gray text-center md:text-gray2 self-end font-text text-[12px] pointer-events-auto px-3 md:flex-row 2xl:text-sm 2xl:px-6">
             <p className="max-w-[400px] 2xl:max-w-[500px]">
               READY TO ELEVATE YOUR DIGITAL PRESENCE? <br />
-              STRATEGIC - SLEEK - EFFECTIVE
+              <span className="text-orange">STRATEGIC - SLEEK - EFFECTIVE</span>
             </p>
-            <div className="max-w-[400px] text-white flex-col justify-start md:text-gray2 2xl:max-w-[500px]">
+            <div className="max-w-[400px] flex-col justify-start text-gray md:text-gray2 2xl:max-w-[500px]">
               I'M SOCIAL, SO IF YOU'D LIKE TO TALK ABOUT YOUR PROJECT, DROP ME A
               LINE
-              <ul className="text-3xl flex justify-center gap-9 mt-4">
+              <ul className="text-3xl  flex justify-center gap-9 mt-4">
                 <li className="relative">
                   <button
                     onClick={copyEmailToClipboard}
