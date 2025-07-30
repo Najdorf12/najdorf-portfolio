@@ -84,7 +84,7 @@ function App() {
       </main>
      
       <Works />
-    <Contact />
+     <Contact />
 
     </ReactLenis>
   );

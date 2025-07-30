@@ -44,7 +44,7 @@ const Works = () => {
         <article className="h-screen flex flex-col justify-between relative py-6 lg:py-9">
           <p className="font-text relative text-[2rem] pl-3 text-orange font-semibold md:pl-6 md:text-6xl max-w-[600px] lg:text-7xl lg:max-w-[800px] lg:font-normal 2xl:text-8xl 2xl:max-w-[1000px]">
             SIMPLICITY IS THE NEW{" "}
-            <span className="w-4 h-4 md:w-6 md:h-6 top-14 right-24 bg-zinc-700 rounded-full absolute md:right-40 md:top-[70px] lg:top-[86px] lg:right-70 xl:right-64 2xl:top-[120px] 2xl:w-7 2xl:h-7"></span>
+            <span className="w-4 h-4 md:w-6 md:h-6 top-15 right-28 bg-zinc-700 rounded-full absolute md:right-40 md:top-[70px] lg:top-[86px] lg:right-70 xl:right-64 2xl:top-[120px] 2xl:w-7 2xl:h-7"></span>
             <span className="text-zinc-700">Sophistication</span>
           </p>
           <div className="absolute inset-0 z-50 w-full h-screen overflow-hidden lg:block ">
