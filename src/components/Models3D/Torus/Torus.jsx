@@ -125,8 +125,8 @@ const Torus = memo(({ modelContainerRef }) => {
     if (responsive.animations.wireframe.enabled) {
       animations.push(
         gsap.to(torusRef.current.material, {
-          _transmission: 0.6,
-          ior: 0.5,
+          _transmission: .5,
+           ior: 1, 
           duration: responsive.animations.scroll.duration,
           scrollTrigger: {
             trigger: "#more",
@@ -214,14 +214,14 @@ const Torus = memo(({ modelContainerRef }) => {
 
     // Simplificar animaciones de posición en móviles
     tl.to(torusRef.current.position, {
-      y: -1 * responsive.animations.scroll.intensity,
-      z: -3 * responsive.animations.scroll.intensity,
+      y: -1.4 * responsive.animations.scroll.intensity,
+      z: -3.2 * responsive.animations.scroll.intensity,
       ease: "none",
       duration: responsive.animations.scroll.duration,
     })
       .to(torusRef.current.position, {
-        x: 2 * responsive.animations.scroll.intensity,
-        z: -0.5 * responsive.animations.scroll.intensity,
+        x: 1.5 * responsive.animations.scroll.intensity,
+        z: 0 * responsive.animations.scroll.intensity,
         y: 0,
         ease: "none",
         duration: responsive.animations.scroll.duration,
