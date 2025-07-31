@@ -18,11 +18,11 @@ function LoaderScreen({ onLoaded }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] font-text gap-12 text-zinc-600 flex flex-col items-center justify-center bg-white transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[100] font-text gap-20 text-zinc-600 flex flex-col items-center justify-center bg-white transition-opacity duration-500 ${
         isReady ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      <div className="text-3xl flex flex-col items-center gap-3 ">
+      <div className="text-2xl md:text-3xl flex flex-col items-center gap-3 -mt-20">
         <span className="text-sm">Portfolio</span>AGUSTIN MORRO</div>
       <div className=" text-lg font-montserrat">
         {Math.round(progress)}%
