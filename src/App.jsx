@@ -19,6 +19,23 @@ function App() {
   const mainRef = useRef(null);
 
   useEffect(() => {
+    // Reset scroll position to top on page load
+    window.scrollTo(0, 0);
+    lenisRef.current?.lenis?.scrollTo(0, { immediate: true });
+
+    // Optional: Handle browser refresh explicitly
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+      lenisRef.current?.lenis?.scrollTo(0, { immediate: true });
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!isLoaded) return;
 
     const update = (time) => {
@@ -51,6 +68,9 @@ function App() {
 
     lenisRef.current?.lenis?.on("scroll", ScrollTrigger.update);
 
+    // Refresh ScrollTrigger after initialization
+    ScrollTrigger.refresh();
+
     return () => {
       gsap.ticker.remove(update);
       lenisRef.current?.lenis?.off("scroll", ScrollTrigger.update);
@@ -77,7 +97,6 @@ function App() {
           ref={mainRef}
           className="relative w-full z-40 overflow-hidden font-[Montserrat] bg-white"
         >
-          {/* Contenido principal siempre renderizado */}
           <div
             ref={modelContainerRef}
             className="fixed inset-0 z-50 w-full h-screen overflow-hidden lg:block"
@@ -88,8 +107,6 @@ function App() {
           </div>
           <Home />
           <About />
-          
-          {/* LoaderScreen dentro del main pero con posición fija */}
           <LoaderScreen 
             onLoaded={() => setIsLoaded(true)} 
             containerRef={mainRef}
