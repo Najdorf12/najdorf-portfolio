@@ -4,7 +4,7 @@ const About = () => {
     <>
       <section
         id="more"
-        className="w-full relative overflow-hidden z-10 px-5 py-3 lg:pt-32 lg:px-12 xl:px-20 xl:py-9 2xl:py-12 "
+        className="w-full relative overflow-hidden z-10 px-5 py-6 lg:pt-32 lg:px-12 xl:px-20 xl:py-9 2xl:py-12 "
       >
         <article className="flex text-balance  flex-col gap-6 font-title text-zinc-400">
           <p className="text-7xl md:text-8xl lg:text-9xl max-w-[600px] 2xl:text-[9rem] 2xl:max-w-[800px]">
